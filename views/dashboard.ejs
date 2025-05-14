@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#c5a057">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="icon" href="/images/favicon.jpg" type="image/png">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<body>
+  <!-- /* BLUR EFFECT */ -->
+  <span class="bg__blur"></span>
+  <span class="footer__blur"></span>
+
+
+
+
+  <div class="page-wrapper">
+
+    <!-- Original Code Begins -->
+    <header class="dashboard-header">
+
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+
+      <!-- ALL FOR 3D  -->
+           <div class="bonus">
+          <a href="/bonus"><i class="ri-links-line"></i></a>
+        </div>
+
+
+
+      <!-- ALL ABOUT PORTFOLIO TRACKING  -->
+      <div id="toggle-portfolio-btn"><i class="ri-stock-line"></i> Track Tokens</div>
+      <script>
+        document.getElementById('toggle-portfolio-btn').addEventListener('click', function () {
+          const portfolio = document.getElementById('portfolio-section');
+          portfolio.classList.toggle('hidden');
+        });
+      </script>
+
+
+      <section id="portfolio-section" class="portfolio-section  hidden">
+        <h2>Portfolio Tracker</h2>
+        <form id="portfolio-form">
+          <div id="portfolio-inputs">
+            <% if (typeof savedPortfolio !==' undefined' && savedPortfolio.length> 0) { %>
+              <% savedPortfolio.forEach(function(item) { %>
+                <div class="portfolio-row">
+                  <input list="token-list" type="text" name="tokens[]" placeholder="Token ID (e.g., ethereum)"
+                    value="<%= item.token %>" required>
+                  <input type="number" step="any" name="amounts[]" placeholder="Amount" value="<%= item.amount %>"
+                    required>
+                </div>
+                <% }); %>
+                  <% } else { %>
+                    <div class="portfolio-row">
+                      <input list="token-list" type="text" name="tokens[]" placeholder="Token ID (e.g., ethereum)"
+                        required>
+                      <input type="number" step="any" name="amounts[]" placeholder="Amount" required>
+                    </div>
+                    <% } %>
+          </div>
+
+          <div class="portfolio-row">
+            <button type="button" onclick="addPortfolioRow()">Add Token</button>
+            <button type="submit">Calculate Value</button>
+          </div>
+        </form>
+
+        <datalist id="token-list">
+          <option value="bitcoin">
+          <option value="ethereum">
+          <option value="solana">
+          <option value="cardano">
+          <option value="dogecoin">
+        </datalist>
+      </section>
+
+      <!-- MY HEADER  -->
+      <div class="profile-container">
+        <div class="profile-details">
+           <div class="logout">
+          <a href="/"><i class="ri-logout-box-line"></i></a>
+        </div>
+        </div>
+
+        <div class="profile-pic">
+          <% const nameParts=user.name.trim().split(' ');
+          const initials = nameParts[0][0] + (nameParts[1] ? nameParts[1][0] : '');
+          %>
+          <span><%= initials.toUpperCase() %></span>
+        </div>
+        
+      </div>
+
+    </header>
+    <!-- Chart placeholder (one per token dynamically) -->
+    <div id="portfolio-results" class="portfolio-results"></div>
+    <div id="sparkline-charts" class="sparkline-grid"></div>
+
+
+
+    <div class="main-container">
+
+      <div class="container-example" id="example-container">
+        <h2>Example APIs</h2>
+        <p>
+          Below is a list of all submitted example APIs. These represent available services within your MCP
+          environment.
+        </p>
+
+        <div class="hold1">
+          <input type="text" id="search" placeholder="Search by name or tags">
+          <button class="add-btn">Add New</button>
+        </div>
+
+
+        <div id="examples-list"></div>
+
+        <h2>Add a New Example</h2>
+        <p>
+          Use this form to submit a new "Example API" to the DeMCP server.
+          Each example represents a service or module that might be used in a Model Context Protocol (MCP) system,
+          such as a blockchain data provider, decentralized finance endpoint, oracle, or smart contract interface.
+        </p>
+        <form id="example-form">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required placeholder="bitcoin">
+
+          <label for="value">Value:</label><br>
+          <input type="text" id="value" name="value" required placeholder="https://api.defi-a.io/data">
+
+          <label for="description">Description:</label><br>
+          <textarea id="description" name="description" required></textarea><br><br>
+
+          <label for="tags">Tags (comma separated):</label><br>
+          <input type="text" id="tags" name="tags" placeholder="Smart Contracts">
+
+          <button type="submit">Submit Example</button>
+        </form>
+
+      </div>
+      <script>
+        document.querySelector(' .add-btn').addEventListener('click', () => {
+          const container = document.getElementById('example-container');
+          container.scrollTo({
+            top: container.scrollHeight,
+            behavior: 'smooth'
+          });
+        });
+      </script>
+
+
+
+            <section id="chart-section">
+              <div class="chart">
+                <input type="text" id="tvTokenSearch" placeholder="Try BTC, ETH, SOL, BITCOIN, SOLANA, GOLD ETC" />
+                <button onclick="updateTradingViewChart()" class="search-btn">Search</button>
+              </div>
+              <div id="tradingview-widget" style="height: 500px;"></div>
+              <h2 id="chart-title">Price Chart</h2>
+            </section>
+
+
+
+            <div class="market-data">
+              <h2>Market Data</h2>
+              <p>Real-time token prices retrieved from a live market data source.</p>
+
+              <div class="hold3">
+                <input type="text" id="token-search" placeholder="Search tokens..." oninput="applyMarketFilter()" />
+                <select id="market-filter" onchange="applyMarketFilter()">
+                  <option value="">-- Sort By --</option>
+                  <option value="highest">Highest Price</option>
+                  <option value="lowest">Lowest Price</option>
+                  <option value="az">Alphabetical (A–Z)</option>
+                  <option value="za">Alphabetical (Z–A)</option>
+                  <option value="new">Newly Added</option>
+                </select>
+              </div>
+
+              <div id="marketdata-list"></div>
+            </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- FUNCTION FOR TRADING VIEW  -->
+      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+      <script type="text/javascript">
+        function loadTradingViewWidget(symbol = 'BINANCE:BTCUSDT') {
+          const container = document.getElementById('tradingview-widget');
+          container.innerHTML = ""; // Clear previous chart
+
+          new TradingView.widget({
+            "container_id": "tradingview-widget",
+            "width": "100%",
+            "height": 500,
+            "symbol": symbol,
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": false,
+            "hide_side_toolbar": false,
+            "studies": ["MACD@tv-basicstudies"],
+            "withdateranges": true
+          });
+
+          document.getElementById('chart-title').innerText = `${symbol} Price Chart`;
+        }
+
+        function updateTradingViewChart() {
+          const token = document.getElementById('tvTokenSearch').value.trim().toUpperCase();
+
+          // Symbol mapping for known assets
+          const symbolMap = {
+            BTC: 'BINANCE:BTCUSDT',
+            ETH: 'BINANCE:ETHUSDT',
+            SOL: 'BINANCE:SOLUSDT',
+            DOGE: 'BINANCE:DOGEUSDT',
+            ADA: 'BINANCE:ADAUSDT',
+            GOLD: 'OANDA:XAUUSD',
+            XAUUSD: 'OANDA:XAUUSD',
+            SP500: 'SP:SPX',
+            AAPL: 'NASDAQ:AAPL'
+            // Add more custom mappings as needed
+          };
+
+          const symbol = symbolMap[token] || `BINANCE:${token}USDT`;
+          loadTradingViewWidget(symbol);
+        }
+
+        window.addEventListener('load', () => {
+          setTimeout(() => loadTradingViewWidget('BINANCE:BTCUSDT'), 1000); // Load BTC by default
+        });
+      </script>
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        document.getElementById('portfolio-form').addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const tokens = [...document.getElementsByName('tokens[]')].map(input => input.value.trim().toLowerCase());
+          const amounts = [...document.getElementsByName('amounts[]')].map(input => parseFloat(input.value));
+
+          console.log('Tokens:', tokens);
+          console.log('Amounts:', amounts);
+
+          try {
+            const res = await fetch('/api/portfolio-value', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ portfolio: tokens.map((token, index) => ({ token, amount: amounts[index] })) })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+              // Save portfolio (optional - if user is logged in)
+              await fetch('/api/portfolio/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ portfolio: tokens.map((token, i) => ({ token, amount: amounts[i] })) })
+              });
+
+              let html = `<h3>Total Value: $${data.totalValueUSD.toFixed(2)}</h3><ul>`;
+              document.getElementById('sparkline-charts').innerHTML = '';
+
+              data.details.forEach(item => {
+                const token = item.token.toUpperCase();
+                if (item.price === 0) {
+                  html += `<li>${token}: ❌ Price unavailable</li>`;
+                } else {
+                  const changeClass = item.valueChange && item.valueChange < 0 ? 'loss' : 'gain';
+                  html += `<li class="${changeClass}">${token}: ${item.amount} × $${item.price.toFixed(2)} = $${item.value.toFixed(2)}</li>`;
+
+                  // Generate Sparkline per token
+                  generateSparkline(item.token.toLowerCase());
+                }
+              });
+
+              html += '</ul>';
+              document.getElementById('portfolio-results').innerHTML = html;
+
+              Toastify({
+                text: "✅ Portfolio value calculated and saved!",
+                backgroundColor: "green",
+                duration: 3000
+              }).showToast();
+            } else {
+              Toastify({
+                text: `❌ ${data.message}`,
+                backgroundColor: "red",
+                duration: 3000
+              }).showToast();
+            }
+
+          } catch (err) {
+            console.error(err);
+            Toastify({
+              text: "❌ Failed to fetch portfolio data.",
+              backgroundColor: "red",
+              duration: 3000
+            }).showToast();
+          }
+        });
+
+        // Add new token input row
+        function addPortfolioRow() {
+          const row = document.createElement('div');
+          row.classList.add('portfolio-row');
+          row.innerHTML = `
+    <input list="token-list" type="text" name="tokens[]" placeholder="Token ID (e.g., ethereum)" required>
+    <input type="number" step="any" name="amounts[]" placeholder="Amount" required>
+  `;
+          document.getElementById('portfolio-inputs').appendChild(row);
+        }
+
+        // Generate Sparkline using Chart.js
+        async function generateSparkline(tokenId) {
+          try {
+            const res = await fetch(`/api/pricechart?token=${tokenId}`);
+            const data = await res.json();
+            const prices = data.prices.map(p => p[1]);
+
+            const canvas = document.createElement('canvas');
+            canvas.id = `sparkline-${tokenId}`;
+            document.getElementById('sparkline-charts').appendChild(canvas);
+
+            new Chart(canvas, {
+              type: 'line',
+              data: {
+                labels: prices.map((_, i) => i),
+                datasets: [{
+                  data: prices,
+                  borderColor: '#4CAF50',
+                  borderWidth: 1,
+                  pointRadius: 0,
+                  fill: false
+                }]
+              },
+              options: {
+                responsive: true,
+                elements: { line: { tension: 0.3 } },
+                plugins: { legend: { display: false } },
+                scales: {
+                  x: { display: false },
+                  y: { display: false }
+                }
+              }
+            });
+          } catch (err) {
+            console.error('Error generating sparkline for', tokenId, err);
+          }
+        }
+      </script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      <script src="/js/dashboard2.js"></script>
+      <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

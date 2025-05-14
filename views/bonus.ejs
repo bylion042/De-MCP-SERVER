@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+   <meta name="theme-color" content="#c5a057">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Asset Recommender</title>
+<link rel="icon" href="/images/favicon.jpg" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <span class="footer__blur"></span>
+
+  <div class="contain">
+        <img src="/images/logo.png" alt="logo">
+
+
+  <h1>Prompt-to-3D Asset Recommender</h1>
+  <form action="/recommend" method="POST">
+    <label for="Promt">Enter Promt:</label>
+  <input type="text" name="prompt" placeholder="castle in the clouds" required />
+  <button type="submit">Get Asset Suggestions</button>
+</form>
+
+  <a class="back-link" href="/dashboard"><i class="ri-arrow-left-line"></i> Go Back</a>
+
+</div>
+</body>
+</html>

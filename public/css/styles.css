@@ -1,0 +1,117 @@
+/* body, h1, h2, p, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1e40af;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  max-width: 500px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+}
+
+form button {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover {
+  background-color: #1d4ed8;
+}
+
+#examples-list, #marketdata-list {
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  max-width: 600px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+
+
+
+
+
+
+#market-filter {
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+#token-search {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+#market-filter {
+  margin-left: 10px;
+  padding: 8px;
+} */

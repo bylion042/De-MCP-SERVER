@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+:root {
+  --primary-color: #0d0d0d;
+  --primary-color-light: #111;
+  --primary-color-extra-light: #1a1a1a;
+  --secondary-color: #89D528;
+  --secondary-color-dark: #4CAF50;
+  --text-light: #cecece;
+  --white: #ffffff;
+  --max-width: 1300px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background: var(--primary-color-light);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* text-align: center; */
+}
+
+/* Container for the content */
+.contain {
+  width: 100%;
+  max-width: 500px;
+  background: var(--primary-color-extra-light);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading Style */
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+.contain img {
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Form input and button */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form label{
+    text-align: start;
+}
+
+input[type="text"] {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #222;
+  color: var(--white);
+}
+
+button {
+  padding: 0.8rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+/* Card container for suggestions */
+.card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card strong {
+  color: var(--white);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons in cards */
+.btn {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--secondary-color-dark);
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back-link i{
+    margin-right: 5px;
+}
+
+.back-link:hover {
+  color: var(--secondary-color);
+}
+
+
+/* BLUR EFFECT */
+.bg__blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px var(--secondary-color-dark);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+  
+  .footer__blur {
+    position: fixed;
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 1000px 50px var(--secondary-color-dark);
+    bottom: 0;
+    right: 0;
+  }
+
+
+
+
+
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .contain {
+    padding: 1.5rem;
+  }
+
+   .contain img {
+        width: 50%;
+    }
+
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  input[type="text"], button {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  width: 100%;
+}
+}

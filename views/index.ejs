@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c5a057">
+  <title>
+    <%= title %>
+  </title>
+  <link rel="icon" href="/images/favicon.jpg" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+<!-- /* BLUR EFFECT */ -->
+    <span class="bg__blur"></span>
+  <span class="footer__blur"></span>
+
+
+
+  <!-- ALL ABOUT NAV AND HAMBURGER  -->
+
+  <!-- FOR BIG SCREEN  -->
+  <nav class="hide">
+    <div class="nav__logo">
+      <a href="/"><img src="images/logo.png" alt="logo" /></a>
+    </div>
+
+    <div class="nav-hold">
+      <ul class="nav__links">
+        <li class="link"><a href="https://github.com/demcp/awesome-web3-mcp-servers">GitHUB</a></li>
+        <li class="link"><a href="https://t.me/DeMCPOfficial">Telegram</a></li>
+        <li class="link"><a href="https://jup.ag/swap/SOL-81YHAzq9yfptVbNTHiYuMVKVQ6ZNs3XeQFFENnNUpump">$DMCP</a></li>
+        <li class="link"><a href="https://demcp.gitbook.io/docs">Documentation</a></li>
+      </ul>
+
+      <a href="/login"><button class="btn join__now">Login</button></a>
+      <a href="/register"><button class="btn join__now">Register</button></a>
+      <button class="installBtn btn join__now install" style="display: none;">Add to Home</button>
+    </div>
+  </nav>
+
+
+
+
+  <!-- FOR SMALL SCREEN  -->
+  <nav class="mobile-nav hide1">
+    <div class="nav__logo">
+      <a href="/"><img src="images/logo.png" alt="logo"></a>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="menu-toggle" aria-label="Open menu">
+      <i class="ri-menu-3-line"></i>
+    </div>
+
+    <!-- Sliding Menu -->
+    <div class="hold3" id="mobile-menu">
+      <div class="hamburger" id="menu-close" aria-label="Close menu">
+        <i class="ri-close-line"></i>
+      </div>
+
+      <ul class="nav__links">
+        <li class="link"><a href="https://jup.ag/swap/SOL-81YHAzq9yfptVbNTHiYuMVKVQ6ZNs3XeQFFENnNUpump">$DMCP</a></li>
+        <li class="link"><a href="https://github.com/demcp/awesome-web3-mcp-servers">GitHUB</a></li>
+        <li class="link"><a href="https://t.me/DeMCPOfficial">Telegram</a></li>
+        <li class="link"><a href="https://demcp.gitbook.io/docs">Documentation</a></li>
+      </ul>
+
+      <div class="btn-hold">
+        <a href="/login"><button class="btn join__now">Login</button></a>
+        <a href="/register"><button class="btn join__now">Register</button></a>
+        <button class="installBtn btn join__now small-screen" style="display: none;">Add to Home</button>
+        <a href="/forgot-password"><button class="btn join__now">Forgot your password?</button></a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+ <!-- ALL MAIN ABOUT HEADER -->
+<header class="section__container header__container">
+  <div class="header__content">
+
+    <h4>Unlock the Power of Decentralized AI Integration</h4>
+<h1><span>De MCP <br></span> AI Connect & <span> Protocols Distributed</span></h1>
+    <p>
+      DeMCP is your gateway to seamless AI integration, enabling instant connection to decentralized platforms with minimal setup.
+      Empower your applications and accelerate your development with our universal protocol.
+    </p>
+    <p class="download">Access Our Platform:</p>
+
+    <div class="download-app">
+      <a href="login" class="download-btn">Track DeMCP</a>
+      <a href="register" class="download-btn">Access on DeMCP</a>
+</div>
+
+
+    <ul class="features">
+      <li>&#10003; Instant Server Setup</li>
+      <li>&#10003; AI-Ready Connectivity</li>
+      <li>&#10003; Secure, Decentralized Protocol</li>
+    </ul>
+  </div>
+
+  <div class="header__image">
+    <img src="/images/mcp.png" alt="DeMCP Protocol">
+  </div>
+</header>
+
+
+
+
+
+  <!-- ALL ABOUT HOW IT WORKS -->
+<section class="review section__container">
+  <h2 class="section__header">How DeMCP Works</h2>
+  <p class="section__subheader">
+    DeMCP simplifies integration for AI applications, enabling fast and seamless connection to decentralized systems. 
+    Whether you’re an AI developer or integrating with existing platforms, DeMCP ensures effortless deployment in just seconds.
+  </p>
+  <br>
+
+  <div class="how-it-work">
+    <div class="container">
+      <div class="step">
+        <div class="circle orange">1</div>
+        <h2>SET UP YOUR SERVER</h2>
+        <p class="section__subheader">Prepare your DeMCP server by selecting the platform or AI application you want to connect.</p>
+      </div>
+
+      <div class="arrow-left"><i class="ri-arrow-right-s-line"></i></div>
+      <div class="arrow-down"><i class="ri-arrow-down-s-line"></i></div>
+
+      <div class="step">
+        <div class="circle purple">2</div>
+        <h2>CONNECT YOUR APP</h2>
+        <p class="section__subheader">Integrate your AI app or service in just seconds with DeMCP's plug-and-play setup.</p>
+      </div>
+
+      <div class="arrow-left"><i class="ri-arrow-right-s-line"></i></div>
+      <div class="arrow-down"><i class="ri-arrow-down-s-line"></i></div>
+
+      <div class="step">
+        <div class="circle blue">3</div>
+        <h2>ENJOY INSTANT INTEGRATION</h2>
+        <p class="section__subheader">Start using the integrated features immediately, with real-time data exchange and processing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- ALL ABOUT WHY CHOOSE US  -->
+  <section class="section__container explore__container">
+    <h2 class="section__header" id="reason-section">Why Choose DE MCP?</h2>
+    <p class="section__subheader">
+        Discover how DeMCP’s seamless integration, universal compatibility, and future-ready technology are revolutionizing AI application development.
+    </p>
+
+
+    <div class="explore__grid">
+      <div class="explore__card">
+        <span><i class="ri-hard-drive-3-fill"></i></span>
+        <h4> Compatibility</h4>
+        <p>
+          DeMCP speaks every protocol’s language, enabling seamless interaction across diverse platforms and systems.
+        </p>
+        <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+      </div>
+
+      <div class="explore__card act">
+        <span><i class="ri-hard-drive-3-fill"></i></span>
+        <h4>Instant Integration</h4>
+        <p>
+          Connect AI agents and apps to any DeMCP server in seconds — no complex setup, no friction, just very fast.
+        </p>
+        <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+      </div>
+
+      <div class="explore__card">
+        <span><i class="ri-hard-drive-3-fill"></i></span>
+        <h4>Built for the Future</h4>
+        <p>
+Designed for scalability and evolution, DeMCP is ready to power the next generation of AI-driven systems.        </p>
+        <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+      </div>
+
+      <div class="explore__card">
+        <span><i class="ri-hard-drive-3-fill"></i></span>
+        <h4>Rich Performance </h4>
+        <p>
+          Empower your applications with deep, real-time context making them smarter, faster, and more responsive.
+        </p>
+        <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+<!-- ALL ABOUT DeMCP -->
+<section class="review section__container">
+  <h2 class="section__header">Unleash DeMCP</h2>
+  <p class="section__subheader">
+    Seamlessly integrate AI, simplify development, and future-proof your applications with DeMCP. 
+    Empower your projects with the flexibility and speed of a universal protocol designed for next-gen tech.
+  </p>
+  <br>
+
+  <div class="followers">
+    <div class="container">
+      <div class="step y-rotate">
+        <div class="circle">5,Sec</div>
+        <h2>INSTANT SYNC</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <!-- ALL ABOUT HOW WE WORK  -->
+  <section class="review section__container">
+    <h2 class="section__header" id="Protocol">Our Protocol for AI</h2>
+    <p class="section__subheader tall">
+      MCP simplifies development, enabling instant, context-rich connections between AI agents and any server — in just
+      seconds. Its simplicity and compatibility make it a foundation for AI’s next evolution.
+    </p>
+    <br>
+
+    <section class="steps-section">
+      <!-- Step 1 -->
+      <div class="steps">
+        <div class="step-image">
+          <img src="/images/robort1.png" alt="ai">
+        </div>
+        <div class="step-content">
+          <p class="step-number">Phase - 01</p>
+          <h3 class="step-title">Connect in 5 Seconds</h3>
+          <p class="tall">
+            MCP, Model Context Protocol, is an open and standard protocol that enables seamless integration between AI
+            apps & agents and your tools & data sources.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="steps reverse">
+        <div class="step-content">
+          <p class="step-number">Phase - 02</p>
+          <h3 class="step-title">AI Integration</h3>
+          <p class="tall">
+            MCP offers a universal protocol, reducing development complexity and promoting compatibility. AI apps and
+            agents can link to any MCP server without extra effort, literally in five seconds.
+
+          </p>
+        </div>
+        <div class="step-image">
+          <img src="/images/robort2.png" alt="ai">
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="steps">
+        <div class="step-image">
+          <img src="/images/robort3.png" alt="ai">
+        </div>
+        <div class="step-content">
+          <p class="step-number">Phase - 03</p>
+          <h3 class="step-title"> Next AI Evolution</h3>
+          <p class="tall">
+            MCP facilitates more powerful and context-rich Al applications, MCP’s simplicity and universality position
+            it as a key driver for AI’s next evolution.
+
+          </p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+
+
+
+  <!-- ALL ABOUT Frequently asked questions  -->
+  <section class="section__container">
+    <h2 class="section__header" id="faq">Common Questions?</h2>
+    <br>
+
+    <div class="faq-container">
+      <div class="faq-detail">
+        <p class="tall">
+          We understand you may have questions about how DeMCP works, its integrations, and how it simplifies AI app development. 
+          This section provides clear, concise answers to some of the most common inquiries.
+        </p>
+
+        <img src="./images/confused.png" alt="confused" class="confused">
+      </div>
+
+      <div class="faq-details">
+
+        <div class="faq-item">
+          <div class="faq-question">What is DeMCP?</div>
+          <div class="faq-answer">
+            DeMCP (Decentralized Market Control Protocol) is a universal protocol that enables easy integration for AI applications, making it simpler to connect agents, systems, and services in real-time.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How does DeMCP work?</div>
+          <div class="faq-answer">
+            DeMCP allows AI apps and agents to link to any server effortlessly, enabling faster and more efficient communication and data exchange across decentralized networks.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Is DeMCP easy to integrate?</div>
+          <div class="faq-answer">
+            Yes, DeMCP is designed to be plug-and-play. With just a few lines of code, AI apps and services can instantly integrate and interact with any DeMCP server.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What are the benefits of using DeMCP?</div>
+          <div class="faq-answer">
+            DeMCP offers universal compatibility, reduces development complexity, and allows for faster deployment, empowering developers to focus on innovation instead of integration challenges.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How secure is DeMCP?</div>
+          <div class="faq-answer">
+            DeMCP uses advanced encryption and secure protocols to ensure that your data and interactions across decentralized networks remain private and protected.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How long does it take to connect an app?</div>
+          <div class="faq-answer">
+            Connecting an app to DeMCP can be done in seconds, allowing for rapid development and deployment of decentralized AI applications.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can I use DeMCP for non-AI apps?</div>
+          <div class="faq-answer">
+            Yes, DeMCP is versatile and can be used to connect a wide range of applications, not just AI-powered ones, offering seamless integration across multiple platforms.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Is there any technical support?</div>
+          <div class="faq-answer">
+            Yes, DeMCP provides real-time support to help developers and users troubleshoot issues and integrate the protocol seamlessly into their applications.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Which platforms does DeMCP support?</div>
+          <div class="faq-answer">
+            DeMCP is platform-agnostic and supports integration with a variety of systems, including web, mobile, and decentralized networks, ensuring maximum compatibility.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How do I start using DeMCP?</div>
+          <div class="faq-answer">
+            Simply sign up, choose your integration plan, and start connecting your applications. DeMCP’s simple API and documentation make it easy to get started.
+          </div>
+        </div>
+
+      </div>
+    </div>
+</section>
+
+
+
+
+
+  <!-- ALL ABOUT WHAT WE BUY  -->
+  <section class="review section__container">
+    <h2 class="section__header" id="Capabilities">Our Capabilities</h2>
+<p class="section__subheader">
+  DeMCP powers AI apps and smart protocols with seamless, secure, and automated decentralized infrastructure.
+</p>
+
+
+    <br>
+
+    <div class="crypto-slide-container">
+      <div class="crypto-slide">
+        <img src="/images/social1.jpeg" alt="social media">
+        <img src="/images/social2.jpeg" alt="social media">
+        <img src="/images/social3.jpeg" alt="social media">
+        <img src="/images/social4.jpeg" alt="social media">
+        <img src="/images/social5.jpeg" alt="social media">
+        <img src="/images/social6.jpeg" alt="social media">
+        <img src="/images/social7.jpeg" alt="social media">
+        <img src="/images/social8.jpeg" alt="social media">
+        <img src="/images/social4.jpeg" alt="social media">
+        <img src="/images/social9.jpeg" alt="social media">
+        <img src="/images/social5.jpeg" alt="social media">
+        <!-- Duplicate for Infinite Scroll -->
+        <img src="/images/social1.jpeg" alt="social media">
+        <img src="/images/social2.jpeg" alt="social media">
+        <img src="/images/social3.jpeg" alt="social media">
+        <img src="/images/social10.jpeg" alt="social media">
+        <img src="/images/social4.jpeg" alt="social media">
+        <img src="/images/social6.jpeg" alt="social media">
+        <img src="/images/social4.jpeg" alt="social media">
+        <img src="/images/social7.jpeg" alt="social media">
+        <img src="/images/social8.jpeg" alt="social media">
+        <img src="/images/social9.jpeg" alt="social media">
+        <img src="/images/social10.jpeg" alt="social media">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+
+
+
+<!-- ALL ABOUT FOOTER SECTION -->
+<footer class="section__container footer__container">
+
+  <div class="footer__col">
+    <div class="footer__logo"><a href="/"><img src="images/logo.png" alt="DeMCP logo" /></a></div>
+    <p>
+      Welcome to DeMCP — the leading platform for seamless AI integration and decentralized protocol solutions.
+      Empower your applications with powerful, universal protocols designed for the next generation of AI and blockchain technology.
+    </p>
+    <div class="footer__socials">
+      <a href="#"><i class="ri-twitch-line"></i></a>
+      <a href="#"><i class="ri-twitter-fill"></i></a>
+      <a href="#"><i class="ri-linkedin-fill"></i></a>
+      <a href="#"><i class="ri-github-fill"></i></a>
+      <a href="#"><i class="ri-discord-fill"></i></a>
+    </div>
+  </div>
+
+  <div class="footer__col cool">
+    <h4>Platform</h4>
+    <a href="#">AI Services</a>
+    <a href="#">Decentralized Apps</a>
+    <a href="#">Protocol Integration</a>
+    <a href="#">API Documentation</a>
+    <a href="#">Developer Resources</a>
+  </div>
+
+  <div class="footer__col cool">
+    <h4>Support</h4>
+    <a href="#">FAQ</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Security</a>
+  </div>
+
+  <div class="footer__col cool">
+    <h4>About Us</h4>
+    <a href="#">About DeMCP</a>
+    <a href="#">Careers</a>
+    <a href="#">Blog</a>
+    <a href="#">News & Updates</a>
+  </div>
+</footer>
+
+<div class="footer__bar">
+  <p>Copyright © 2025 DeMCP. All rights reserved.</p>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/index.js"></script>
+  <!-- FOR MY MANIFEST  -->
+  <script src="/js/scripts.js"></script>
+
+</body>
+
+</html>

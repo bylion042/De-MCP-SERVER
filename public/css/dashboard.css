@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #0d0d0d;
+  --primary-color-light: #111;
+  --primary-color-extra-light: #1a1a1a;
+  --secondary-color: #89D528;
+  --secondary-color-dark: #4CAF50;
+  --text-light: #cecece;
+  --white: #ffffff;
+  --max-width: 1300px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0px 30px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+  /* font-family: 'Luckiest Guy', cursive; */
+  background: var(--primary-color-light);
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+
+
+.page-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.main-container {
+  display: flex;
+  gap: 10px;
+  /* border: 2px solid red; */
+}
+
+.main-container h2 {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.container-example,
+.market-data,
+#chart-section {
+  width: 100%;
+  height: 80vh;
+  overflow-y: auto;
+  padding: 10px 0;
+  /* margin: 1rem auto; */
+  box-sizing: border-box;
+}
+
+.container-example {
+  /* border: 2px solid blue; */
+  width: 50%;
+}
+
+.market-data {
+  /* border: 2px solid green;  */
+  width: 50%;
+}
+
+
+
+
+
+
+/* Style the list of examples */
+#examples-list ul,
+#marketdata-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#examples-list li,
+#marketdata-list li {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-left: 4px solid var(--secondary-color);
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+#examples-list li strong,
+#marketdata-list li strong {
+  color: #333;
+}
+
+
+
+/* ALL ABOUT MARKET DATA  */
+.hold3 {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.hold3 input {
+  width: 100%;
+}
+
+
+
+
+/* CHART SECTION  */
+#chart-section {
+  /* border: 2px solid orange; */
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+
+.container-example,
+.market-data,
+#chart-section {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container-example::-webkit-scrollbar,
+.market-data::-webkit-scrollbar,
+#chart-section::-webkit-scrollbar {
+  display: none;
+}
+
+.chart {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  /* margin-bottom: 3rem; */
+}
+
+.chart input {
+  width: 80%;
+}
+
+.chart .search-btn {
+  width: 20%;
+}
+
+
+.logo img{
+  width: 50%;
+}
+
+
+/* section, form{
+  padding: 10px;
+  border-radius: 5px;
+} */
+.dashboard-header{
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+h1,
+h2,
+h3,
+p,
+label {
+  margin-bottom: 10px;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  padding: 10px;
+  margin-top: 8px;
+  width: 100%;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #111;
+  color: #fff;
+}
+
+#example-form input {
+  margin-bottom: 1.50rem;
+}
+
+#example-form textarea,
+#example-form input {
+  border: 1px solid var(--secondary-color);
+}
+
+button {
+  background-color: #89D528;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #6fa61e;
+}
+
+.dashboard-header {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--primary-color-extra-light);
+}
+
+.profile-container {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-pic {
+  border: 2px solid var(--text-light);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--secondary-color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+}
+.logout {
+  border: 2px solid var(--text-light);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(239, 91, 91);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+}
+.logout a{
+  text-decoration: none;
+color: var(--white);
+}
+
+.bonus {
+  border: 2px solid var(--text-light);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--secondary-color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+}
+.bonus a{
+  text-decoration: none;
+color: var(--white);
+}
+
+
+
+
+
+.hold1 {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.hold1 input {
+  width: 70%;
+}
+
+.hold1 .add-btn {
+  width: 30%;
+}
+
+#marketdata-list,
+#examples-list {
+  margin: 20px 0;
+}
+
+#sparkline-charts {
+  margin-top: 40px;
+}
+
+
+
+
+
+/* Hidden by default */
+#toggle-portfolio-btn{
+  font-family: 'Luckiest Guy', cursive;
+  cursor: pointer;
+  /* width: 10%; */
+  font-size: 20px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+#toggle-portfolio-btn i{
+  margin-right: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Optional styling to make it look like a modal/popup */
+.portfolio-section {
+  position: fixed;
+  top: 8%;
+  right: 20%;
+  width: 30%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--primary-color-extra-light);
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+.portfolio-section h2{
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--white);
+}
+
+
+.portfolio-row {
+  display: flex;
+  gap: 10px;
+  /* flex-wrap: wrap; */
+  margin-bottom: 10px;
+}
+
+.portfolio-row input{
+  border-radius: 10px;
+  border: 1px solid var(--secondary-color);
+}
+.portfolio-row button{
+  background: var(--secondary-color-dark);
+}
+
+.portfolio-results{
+  font-family: 'Luckiest Guy', cursive;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.portfolio-results ul li{
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Luckiest Guy', cursive;
+  margin-top: 20px;
+}
+
+
+/* ALL ABOUT THE BLUR IN THE BACKGROUND  */
+.bg__blur {
+  position: absolute;
+  box-shadow: 0 0 1000px 70px var(--secondary-color);
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.footer__blur {
+  position: absolute;
+  position: fixed;
+  z-index: -1;
+  box-shadow: 0 0 1000px 70px var(--secondary-color);
+  bottom: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+body {
+    padding: 10px;
+}
+
+.page-wrapper {
+    padding: 0px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.profile-container {
+    gap: 5px;
+}
+.logo img {
+    display: none;
+}
+
+.dashboard-header {
+    padding: 10px 10px;
+    flex-direction: row-reverse;
+}
+
+.container-example {
+  width: 100%;
+}
+
+.market-data {
+  width: 100%;
+}
+
+#chart-section {
+  width: 100%;
+  height: 100vh;
+  padding: 0px;
+  border: none;
+  padding: 30px 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+.portfolio-section {
+  top: 8%;
+  right: 5%;
+  width: 70%;
+  max-height: 80vh;
+  border-radius: 10px;
+  padding: 1rem 0.50rem;
+}
+
+.portfolio-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.portfolio-row button {
+   border-radius: 5px;
+}
+
+#toggle-portfolio-btn{
+  font-size: 15px;
+  border-radius: 50px;
+  padding: 5px 10px;
+}
+
+}

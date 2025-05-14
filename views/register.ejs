@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c5a057">
+    <title>Register</title>
+  <link rel="icon" href="/images/favicon.jpg" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <div class="container">
+
+
+        <img src="/images/logo.png" alt="">
+        <p>Register an account!</p>
+
+        <form action="/auth/register" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="gcw" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="user@example.com" required>
+
+            <label for="password">Password</label>
+            <div class="input-container">
+                <input type="password" id="password" name="password" required placeholder="password">
+                <i class="ri-eye-off-line toggle-password" onclick="togglePassword('password', this)"></i>
+            </div>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="input-container">
+                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="password">
+                <i class="ri-eye-off-line toggle-password" onclick="togglePassword('confirmPassword', this)"></i>
+            </div>
+
+            <label for="phone">Phone Number (Include country code)</label>
+            <input type="tel" id="phone" name="phone" placeholder="eg +1XXXXXXXXXX" required>
+
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="terms" name="terms" value="true" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Conditions</a> & <a
+                                href="#">Policy</a></label>
+                    </div>
+
+                    <button type="submit" class="btn">Sign up</button>
+                    <br>
+        </form>
+
+        <p>Already have an account? <a href="/login">Sign in</a></p>
+        <a href="/" class="back-link"><i class="ri-arrow-left-line"></i> Back to Home</a>
+
+    </div>
+    <!-- BACKGROUND BLUR -->
+    <span class="footer__blur"></span>
+
+
+
+    
+    <!-- FUCTION TO MATCH PHONE NUM AND CODE  -->
+    <script>
+        document.getElementById("phone").addEventListener("input", function () {
+            let phoneInput = this.value;
+            let regex = /^\+[0-9]{1,3}[0-9]{6,12}$/; // Matches valid phone formats
+
+            if (!regex.test(phoneInput)) {
+                this.style.border = "2px solid red";  // Show red border if invalid
+            } else {
+                this.style.border = "2px solid green"; // Green border if valid
+            }
+        });
+    </script>
+
+    <!-- FUNCTION TO VIEW PASSWORD  -->
+    <script>
+        function togglePassword(fieldId, icon) {
+            let input = document.getElementById(fieldId);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.replace("ri-eye-off-line", "ri-eye-line");
+            } else {
+                input.type = "password";
+                icon.classList.replace("ri-eye-line", "ri-eye-off-line");
+            }
+        }
+    </script>
+
+    <!-- FUNCTION THE CHEACK IF PASSWORD MATCH  -->
+    <script>
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+
+        confirmPassword.addEventListener('input', () => {
+            if (confirmPassword.value === "") {
+                confirmPassword.style.border = "1px solid #a3a2a2"; // default border
+            } else if (confirmPassword.value !== password.value) {
+                confirmPassword.style.border = "2px solid #ff4d4f"; // red border
+            } else {
+                confirmPassword.style.border = "2px solid #4caf50"; // green border
+            }
+        });
+
+        password.addEventListener('input', () => {
+            if (confirmPassword.value !== "") {
+                confirmPassword.dispatchEvent(new Event('input')); // re-validate if password changes
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+    <!-- Toastify Script -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <% if (typeof message !=='undefined' ) { %>
+        <script>
+            Toastify({
+                text: "<%= message %>",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "<%= messageType === 'error' ? 'red' : 'green' %>",
+                close: true
+            }).showToast();
+        </script>
+        <% } %>
+
+
+            <!-- FOR MY MANIFEST  -->
+            <script src="/js/register.js"></script>
+</body>
+
+</html>
