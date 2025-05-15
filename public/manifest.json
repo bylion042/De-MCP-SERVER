@@ -1,11 +1,11 @@
 {
-  "name": "Viral Vault",
-  "short_name": "V V",
+  "name": "De MCP SERVER",
+  "short_name": "De MCP",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0d0d0d",
   "theme_color": "#c5a057",
-  "description": "A powerful platform that combines smart investments with social media monetization—empowering users to grow their income through referrals, tasks, and content across major networks.",
+  "description": "Submit and discover decentralized APIs, modules, and services for the Model Context Protocol (DeMCP), including oracles, smart contracts, and blockchain endpoints.",
   "icons": [
     {
       "src": "/icons/icon-192.png",
